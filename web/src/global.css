@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "FC_SAVESPACE_ROUNDED";
+  src: local("FC_SAVESPACE_ROUNDED"),
+    url(./assets/fonts/FC_SAVESPACE_ROUNDED.TTF);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "FC_SAVESPACE_ROUNDED";
+  font-size: 32px;
+}
+
+.Box {
+  scale: 1;
+  background-image: url("/src/assets/bg_plinko.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.DropballBox {
+  background-image: url("/src/assets/bg_dropball.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  scale: 1.4;
+}
+
+.DropballButton {
+  background-image: url("/src/assets/bg_dropball_button.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  scale: 1;
+  cursor: pointer;
+}
