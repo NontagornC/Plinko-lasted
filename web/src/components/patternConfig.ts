@@ -1,4 +1,4 @@
-export const TIME_SCALE = 1.7;
+export const TIME_SCALE = 1.3;
 export const BOARD_WIDTH = 800;
 export const BOARD_HEIGHT = 800;
 export const PIN_SIZE = 8;
