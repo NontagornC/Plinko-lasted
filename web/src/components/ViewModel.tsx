@@ -20,7 +20,7 @@ import {
   TOTAL_SLOTS,
 } from "./patternConfig";
 import { fetchNui } from "@/utils/fetchNui";
-import { IGroupRewards, ILandedSlotProps } from "./type";
+import { IGroupRewards, ILandedSlotProps, IRewardBoxProps } from "./type";
 
 const ViewModel = (
   selectedSlot,
@@ -45,6 +45,10 @@ const ViewModel = (
   const DROP_INTERVAL = 50;
   const requestRef = useRef<number | null>(null);
   const previousTimeRef = useRef<number | undefined>(undefined);
+  const [isOpenRewardModal, setIsOpenRewardModal] = useState<IRewardBoxProps>({
+    isOpen: false,
+    type: null,
+  });
 
   const startTest = () => {
     setLandedSlots([]);
@@ -469,6 +473,14 @@ const ViewModel = (
     }
   };
 
+  const handleOpenRewardModal = (type: string) => {
+    setIsOpenRewardModal({ isOpen: true, type });
+  };
+
+  const handleCloseOpenRewardModal = () => {
+    setIsOpenRewardModal({ isOpen: false, type: null });
+  };
+
   return {
     dropMultipleBalls,
     getPinPositions,
@@ -485,6 +497,9 @@ const ViewModel = (
     startTest,
     currentDrop,
     TOTAL_DROPS,
+    isOpenRewardModal,
+    handleOpenRewardModal,
+    handleCloseOpenRewardModal,
   };
 };
 

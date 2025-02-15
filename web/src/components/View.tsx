@@ -16,6 +16,7 @@ import RewardBoxUI from "./Reward";
 import ViewModel from "./ViewModel";
 import { fetchNui } from "@/utils/fetchNui";
 import { IReturnValidateMoneyProps } from "./type";
+import RewardModal from "./RewardModal";
 // For testing
 // import TestSummary from "./Chart/View";
 // import TestComponent from "./MenuTestComponent";
@@ -69,6 +70,9 @@ const PlinkoGame = ({
     getPinPositions,
     balls,
     landedSlots,
+    isOpenRewardModal,
+    handleOpenRewardModal,
+    handleCloseOpenRewardModal,
     // isDropping,
     // stats,
     // isRunning,
@@ -104,6 +108,11 @@ const PlinkoGame = ({
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center gap-4 p-4">
+      <RewardModal
+        isOpenModal={isOpenRewardModal}
+        onClose={handleCloseOpenRewardModal}
+      />
+
       {/* <TestComponent
         isRandomSlot={isRandomSlot}
         setIsRandomSlot={setIsRandomSlot}
@@ -243,7 +252,7 @@ const PlinkoGame = ({
         </SvgBox>
 
         {/* Group item */}
-        <RewardBoxUI />
+        <RewardBoxUI handleOpenRewardModal={handleOpenRewardModal} />
       </div>
       {/* Test Summary Box */}
       {/* {!isRunning && landedSlots?.length > 0 && (

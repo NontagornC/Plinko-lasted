@@ -40,3 +40,10 @@
   scale: 1;
   cursor: pointer;
 }
+
+.RewardBox {
+  scale: 1;
+  background-image: url("/src/assets/bg_plinko.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}

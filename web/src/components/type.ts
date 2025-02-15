@@ -13,3 +13,8 @@ export interface ILandedSlotProps {
 export interface IGroupRewards {
   [key: string]: number;
 }
+
+export interface IRewardBoxProps {
+  isOpen: boolean;
+  type: string;
+}
